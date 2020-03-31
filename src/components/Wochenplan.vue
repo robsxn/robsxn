@@ -10,7 +10,7 @@ export default {
   name: 'Wochenplan',
   data () {
     return {}
-        }
+  }
 }
 </script>
 

@@ -2,11 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Wochenplan from '@/components/Wochenplan'
-import Kontakt from'@/components/Kontakt'
-import Lieferanten from'@/components/Lieferanten'
-
-
-
+import Kontakt from '@/components/Kontakt'
+import Lieferanten from '@/components/Lieferanten'
 
 Vue.use(Router)
 
@@ -15,14 +12,12 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home,
-
-      
+      component: Home
     },
     {
-    path:'/Wochenplan',
-    name:'Wochenplan',
-    component: Wochenplan
+      path: '/Wochenplan',
+      name: 'Wochenplan',
+      component: Wochenplan
     },
     {
       path: '/Lieferanten',
@@ -30,33 +25,33 @@ export default new Router({
       component: Lieferanten
     },
     {
-    path:'/Kontakt',
-    name:'Kontakt',
-    component: Kontakt
-
-
+      path: '/Kontakt',
+      name: 'Kontakt',
+      component: Kontakt
     }
-
   ]
 })
 
-var vm = new Vue({
+// eslint-disable-next-line
+new Vue({
   el: '#app',
   data: {
-      Datum: new Date().toLocaleDateString(),
-      Tag: new Date().getDay(),
-      wochentag: ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'],
-     
-
-  
-
+    Datum: new Date().toLocaleDateString(),
+    Tag: new Date().getDay(),
+    wochentag: [
+      'Montag',
+      'Dienstag',
+      'Mittwoch',
+      'Donnerstag',
+      'Freitag',
+      'Samstag',
+      'Sonntag'
+    ]
   },
 
-
-  computed : {
-                 message:function(){return(this.wochentag[this.Tag -1])},
-                 
-                 
-          
+  computed: {
+    message: function () {
+      return this.wochentag[this.Tag - 1]
+    }
   }
 })
